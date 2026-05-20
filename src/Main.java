@@ -92,6 +92,7 @@ public class Main {
         //movezeroAtlast();
        // togglecase();
         //countstream();
+<<<<<<< HEAD
         //largestsalary();
         depthigestsalary();
     }
@@ -104,13 +105,72 @@ public class Main {
         li.add(4);
         li.add(5);
         li.add(1);
+=======
+            //largestsalary();
+         //   depthigestsalary();
+       // Longestsubstring();
+        //addOrEvencountUsingStreamApi();
+      // findBylengthUsingStream();
+       // joiningusingStream();
+        frequencyofCharUseingStream();
+
+    }
+    public static void frequencyofCharUseingStream()
+    {
+        String s="aabaa";
+      Map<Character,Long> map=  s.chars().mapToObj(c->(char)c)
+              .collect(Collectors.groupingBy(c->c,Collectors.counting()));
+        System.out.println(map);
+
+    }
+    public static void joiningusingStream()
+    {
+        List<String> List=Arrays.asList("a","b","c");
+       String s= List.stream().collect(Collectors.joining("-"));
+        System.out.println(s);
+    }
+    public static void findBylengthUsingStream(){
+     List<String> list=Arrays.asList("Apple","banana");
+     List<Integer> ab=list.stream().map(name->name.length()).collect(Collectors.toList());
+        System.out.println(ab);
+    }
+    public  static void  addOrEvencountUsingStreamApi()
+    {
+        List<Integer> list=Arrays.asList(10,1,2,34,0,34);
+        Map<String,Long> s=list.stream().
+                collect(Collectors.groupingBy(n->n%2==0?"evnn":"odd",Collectors.counting()));
+        System.out.println(s);
+    }
+    public static void Longestsubstring(){
+        String s="accacba";
+        HashSet <Character> s1=new HashSet<>();
+        int left =0;
+        int right=0;
+        for(right=0;right<s.length();right++)
+        {
+            while(s1.contains(s.charAt(right)))
+            {
+                s1.remove(s.charAt(left));
+                left++;
+            }
+            s1.add(s.charAt(right));
+        }
+        System.out.println(s1);
+    }
+    public static void StreamApi() {
+        List<Integer> li =Arrays.asList(1,2,3,4,5,6);
+>>>>>>> 97340fe (java practice in using stream API problems,collections and core java)
         List a = li.stream()
                 .filter(s -> s % 2 == 0)
                 .collect(Collectors.toList());
         System.out.print(a);
+<<<<<<< HEAD
 
     }
 
+=======
+    }
+>>>>>>> 97340fe (java practice in using stream API problems,collections and core java)
     public static void NumberReverse() {
         int n = 1234;
         int rem = 0;
@@ -121,9 +181,13 @@ public class Main {
             n = n / 10;
         }
         System.out.print(rev);
+<<<<<<< HEAD
 
     }
 
+=======
+    }
+>>>>>>> 97340fe (java practice in using stream API problems,collections and core java)
     public static void LeaderinArrry() {
         int arr[] = {5, 3, 13, 7, 9, 11};
         int max = arr[0];
@@ -201,6 +265,7 @@ public class Main {
         String temp = "";
 
         for (int i = 0; i < s.length(); i++) {
+<<<<<<< HEAD
 
             char ch = s.charAt(i);
 
@@ -215,12 +280,26 @@ public class Main {
         }
 
 
+=======
+            char ch = s.charAt(i);
+            if ((i == 0 || s.charAt(i - 1) == ' ')
+                    && ch >= 'a' && ch <= 'z') {
+                ch = (char) (ch - 32);
+            }
+            temp = temp + ch;
+        }
+>>>>>>> 97340fe (java practice in using stream API problems,collections and core java)
         System.out.println(temp);
     }
 
     public static void sumofDiognal(){
+<<<<<<< HEAD
         int [][]arr={{1,2,3},
                     {2,11,4},
+=======
+       int [][]arr={{1,2,3},
+                     {2,11,4},
+>>>>>>> 97340fe (java practice in using stream API problems,collections and core java)
                     {5,6,7}};
 
         int sum=0;
@@ -269,7 +348,11 @@ public class Main {
 
         System.out.println(maxSum);
     } public static void StreamApi1(){
+<<<<<<< HEAD
         List <String>names =Arrays.asList("sanjay","pravin","kannan","manju");
+=======
+        List <String>names = Arrays.asList("sanjay","pravin","kannan","manju");
+>>>>>>> 97340fe (java practice in using stream API problems,collections and core java)
        List namewith= names.stream().filter(name->name.length()==5).map(name->name.toUpperCase()).
         collect(Collectors.toList());
         System.out.println(namewith);
@@ -292,9 +375,15 @@ public class Main {
         }
         int ind=1;
         for(int i=1;i<n;i++){
+<<<<<<< HEAD
             if(arr[i]!=arr[i-1])
             arr[ind++]=arr[i];
 
+=======
+            if(arr[i]!=arr[i-1]) {
+                arr[ind++] = arr[i];
+            }
+>>>>>>> 97340fe (java practice in using stream API problems,collections and core java)
         }
         for(int i=0;i<ind;i++){
             System.out.print(" "+arr[i]);
@@ -382,4 +471,8 @@ public class Main {
                                 .maxBy(Comparator.comparingInt((e1)-> e1.getSalary()))));
             System.out.println(map);
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 97340fe (java practice in using stream API problems,collections and core java)
 }
